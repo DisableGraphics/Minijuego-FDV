@@ -16,11 +16,11 @@ public class PauseController : MonoBehaviour
 	public void OnPauseClicked() {
 		if(is_paused) {
 			Time.timeScale = 1;
-			text.text = "Pause (Esc)";
+			text.text = "Pausa (Esc)";
 			is_paused = false;
 		} else {
 			Time.timeScale = 0;
-			text.text = "Resume (Esc)";
+			text.text = "Resumir (Esc)";
 			is_paused = true;
 		}
 	}
