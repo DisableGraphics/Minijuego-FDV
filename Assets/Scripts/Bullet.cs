@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class Bullet : MonoBehaviour
 	public static float maxLifeTime = 3f;
 	public Vector3 targetVector;
 
-	private Text texto;	
+	private TextMeshProUGUI texto;	
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class Bullet : MonoBehaviour
 		es = FindFirstObjectByType<EnemySpawner>();
 		j = FindFirstObjectByType<Jugador>();
 		// Small optimization so we aren't looking for the gameObject everytime I call UpdateScoreText()
-		texto = GameObject.FindGameObjectWithTag("UI").GetComponent<Text>();
+		texto = GameObject.FindGameObjectWithTag("UI").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -43,6 +44,6 @@ public class Bullet : MonoBehaviour
 	}
 
 	private void UpdateScoreText() {
-		texto.text = "Puntos: " + Jugador.score;
+		texto.SetText("Puntos: " + Jugador.score);
 	}
 }
