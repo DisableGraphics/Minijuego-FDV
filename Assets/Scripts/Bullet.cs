@@ -31,6 +31,7 @@ public class Bullet : MonoBehaviour
 	void OnCollisionEnter(Collision collision) {
 		if(collision.gameObject.CompareTag("Enemy")) {
 			IncreaseScore();
+			Debug.Log(collision.gameObject.name);
 			es.RemoveMeteor(collision.gameObject);
 			j.RemoveBullet(gameObject);
 		}
